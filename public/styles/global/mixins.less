@@ -1,0 +1,111 @@
+/* 
+  Mixins
+*/
+
+// Weeeeeeee
+.border-radius(@border-radius) {
+	-webkit-border-radius: @border-radius;
+	-moz-border-radius: @border-radius;
+	border-radius: @border-radius;
+}
+.border-bottom-radius(@border-bottom-radius) {
+	-webkit-border-bottom-left-radius: @border-bottom-radius;
+	-moz-border-bottom-left-radius: @border-bottom-radius;
+	border-bottom-left-radius: @border-bottom-radius;
+	-webkit-border-bottom-right-radius: @border-bottom-radius;
+	-moz-border-bottom-right-radius: @border-bottom-radius;
+	border-bottom-right-radius: @border-bottom-radius;
+}
+.border-top-radius(@border-top-radius) {
+	-webkit-border-top-left-radius: @border-top-radius;
+	-moz-border-top-left-radius: @border-top-radius;
+	border-top-left-radius: @border-top-radius;
+	-webkit-border-top-right-radius: @border-top-radius;
+	-moz-border-top-right-radius: @border-top-radius;
+	border-top-right-radius: @border-top-radius;
+}
+.border-bottom-left-radius(@border-bottom-left-radius) {
+	-webkit-border-bottom-left-radius: @border-bottom-left-radius;
+	-moz-border-bottom-left-radius: @border-bottom-left-radius;
+	border-bottom-left-radius: @border-bottom-left-radius;
+}
+.border-bottom-right-radius(@border-bottom-right-radius) {
+	-webkit-border-bottom-right-radius: @border-bottom-right-radius;
+	-moz-border-bottom-right-radius: @border-bottom-right-radius;
+	border-bottom-right-radius: @border-bottom-right-radius;
+}
+.border-top-left-radius(@border-top-left-radius) {
+	-webkit-border-top-left-radius: @border-top-left-radius;
+	-moz-border-top-left-radius: @border-top-left-radius;
+	border-top-left-radius: @border-top-left-radius;
+}
+.border-top-right-radius(@border-top-right-radius) {
+	-webkit-border-top-right-radius: @border-top-right-radius;
+	-moz-border-top-right-radius: @border-top-right-radius;
+	border-top-right-radius: @border-top-right-radius;
+}
+.transition(@transition) {
+	-webkit-transition:@transition;
+	-moz-transition:@transition;
+	-o-transition:@transition;
+	transition:@transition;
+}
+.transform(@transform) {
+  -ms-transform:@transform;
+  -webkit-transform:@transform;
+  transform:@transform;
+}
+.box-shadow (@box-shadow) {
+	-webkit-box-shadow: @box-shadow;
+	-moz-box-shadow: @box-shadow;
+	box-shadow: @box-shadow;
+}
+.box-shadows (@box-shadows,@box-shadowss) {
+	-webkit-box-shadow: @box-shadows,@box-shadowss;
+	-moz-box-shadow: @box-shadows,@box-shadowss;
+	box-shadow: @box-shadows,@box-shadowss;
+}
+.background-size (@background-size) {
+	-webkit-background-size: @background-size;
+	-moz-background-size: @background-size;
+	-o-background-size: @background-size;
+	background-size: @background-size;
+}
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: @opacity;
+	-moz-opacity: @opacity;
+	opacity: @opacity;
+}
+.box-sizing (@box-sizing) {
+    -moz-box-sizing: @box-sizing;
+    -webkit-box-sizing: @box-sizing;
+    box-sizing: @box-sizing;
+}
+
+
+// Bootstrap Override Classes
+.no-lr {padding-left:0; padding-right:0;} // Use on BS Columns
+.no-l {padding-left:0;}
+.no-r {padding-right:0;}
+.no-pull {margin-right:0; margin-left:0;} // Use on BS Rows
+
+// Utility
+// Shadows
+.shadow-off {box-shadow: none !important;}
+.shadow-1 {box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);}
+.shadow-2 {box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);}
+.shadow-3 {box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.shadow-4 {box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);}
+.focus-shadow {
+  .transition(background .25s ease);
+  box-shadow: 0 0px 12px 0 rgba(255, 255, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  background:rgba(255, 255, 0, 0.2);
+}
+.hover {
+  transition: box-shadow .25s;
+  box-shadow: 0;
+}
+.hover:hover {
+  transition: box-shadow .25s;
+  .shadow-1;
+}

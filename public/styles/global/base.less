@@ -1,0 +1,41 @@
+/*
+  Base
+*/
+
+// Resets
+ol, ul, li, p, h1, h2, h3, h4, h5, blockquote {
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+// List Styles
+li {list-style-position:inside;}
+ul li {list-style-type:disc;}
+ol li {list-style-type:decimal;}
+
+// Layout Styles
+section {
+  margin:0;
+  padding:0;
+  
+  &.in-page {
+    margin-bottom:1.5rem;
+  }
+  
+  b.header {
+    display:block;
+    margin-bottom:.1rem;
+  }
+  
+}
+
+// Utility
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
