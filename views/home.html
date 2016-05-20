@@ -1,50 +1,94 @@
 {{> header}}
   
-  <main class="container" id="main">
+<main class="container" id="main">
 
-    <article>
-     
-      <!-- Introduction -->
-      <section class="in-page">
-        <h1>Access</h1>
-        <p class="text-center">An accessibility template focusing on the four outlined areas of disability affecting web browsing: visual, hearing, motor, and cognitive.</p>
-        <p class="text-center">The Access template's purpose is to provide a solid foundation from which to construct the front-end of a web site in as close adherance as possible to <a target="_blank" href="https://www.w3.org/TR/WCAG20/">WCAG 2 compliance</a>.</p>
-        <p class="text-center">
-          Access is a constant work-in-progress, and reminds those utilizing this resource that it is simply a guide intended to aid developers, and to always check their level of compliance with the appropriate institution.
-        </p>
-      </section>
+  <article id="home">
+
+    <!-- Introduction -->
+    <section class="in-page">
+
+      <h1>Access</h1>
+
+      <p class="intro">
+        An accessibility endeavor focusing on the four outlined areas of disability affecting web use: <span>visual</span>, <span>hearing</span>, <span>motor</span>, and <span>cognitive</span>.
+      </p>
+
+      <p>This project's purpose is to spread awareness of accessibility concerns regarding internet use by disabled individuals, as well as to provide a condensed source of information that helps in bringing web sites as close in adherance as possible to <a target="_blank" href="https://www.w3.org/TR/WCAG20/">WCAG 2 compliance</a>.</p>
+
+      <p>
+        Access is a tool to educate oneself about accessible HTML application &amp; technique. By laying out our markup with accessibility as a guide, we positively affect other areas of front-end development and broaden our view of the web as a whole.
+      </p>
+
+    </section>
+
+
+    <!-- Types of Disabilities Overview -->
+    <section class="in-page overview">
+
+      <h2 id="overview">Accessibility Overview</h2>
+
+
+      <div class="row">
+
+        <section class="col-sm-6">
+          <h5 class="paragraph-header">
+            <span class="typcn typcn-eye-outline" aria-hidden="true"></span> Visual
+          </h5>
+          <p>
+            The visual aspect of accessibility is all about screen reader compatibility, which is controlled via keyboard functionality. Ensuring proper semantic markup is key in aiding visually-impaired users.
+          </p>
+        </section>
+
+        <section class="col-sm-6">
+           <h5 class="paragraph-header">
+             <span class="typcn typcn-headphones" aria-hidden="true"></span> Hearing
+           </h5>
+          <p>
+            The hearing aspect of accessibility is focused on audio-enabled media alternatives such as transcripts for videos, and ensuring the UI <i>does not</i> rely on audio-based cues or instructions.
+          </p>
+        </section>
+
+      </div>
+
+
+      <div class="row">
+
+        <section class="col-sm-6">
+          <h5 class="paragraph-header">
+             <span class="typcn typcn-waves" aria-hidden="true"></span> Motor
+           </h5>
+          <p>
+            The motor aspect of accessibility is greatly aided by ease-of-access, generally via keyboard functionality that is manipulated by assistive technologies. 
+          </p>
+        </section>
+
+        <section class="col-sm-6">
+          <p>
+           <b class="header">
+             <span class="typcn typcn-user-outline" aria-hidden="true"></span> Cognitive
+           </b>
+            The cognitive aspect of accessibility is tied to the organization and understandability of pages. Media that assists in content comprehension is of great help to individuals facing cognitive challenges.
+          </p>
+        </section>
+
+      </div>
+
+
+    </section>
+    
+    
+    <!-- Types of Disabilities Overview -->
+    <section class="in-page overview">
+
+      <h2 id="overview">Accessibility Overview</h2>
       
-      <!-- Types of Disabilities Overview -->
-      <section class="in-page row">
-        <h2 id="overview">Template Overview</h2>
-        <div class="col-sm-6">
-          <p>
-            <b class="header">Visual</b>
-            The visual aspect of accessibility largely relies on screen reader compatibility, which is controlled via keyboard functionality.
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <p>
-           <b class="header">Hearing</b>
-            The hearing aspect of accessibility is focused on audio-enabled media alternatives such as transcripts for videos, and ensuring the UX <i>does not</i> rely on any audio-based cues.
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <p>
-           <b class="header">Motor</b>
-            The motor aspect of accessibility is greatly aided by ease-of-access, generally via keyboard functionality that is manipulated by assistive technologies.
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <p>
-           <b class="header">Cognitive</b>
-            The cognitive aspect of accessibility is tied to the organization and understandability of pages. Media that assists in content comprehension is of great help to individuals with cognitive challenges.
-          </p>
-        </div>
-      </section>
       
-    </article>
-  
-  </main>
+      
+    </section>
+
+
+  </article>
+
+</main>
 
 {{> footer}}    

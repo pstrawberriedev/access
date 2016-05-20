@@ -22,9 +22,19 @@ nav#desktop {
     text-transform:uppercase;
   }
 
+  a.skip-nav {
+    float:left;
+    display:block;
+    padding:1rem;
+    .transition(background 0.3s ease);
+       &:hover {
+        background:rgba(0,0,0,.1);
+      }
+  }
+  
   #mobile-menu {
     display:none;
-    padding:.8rem;
+    padding:1rem;
     text-transform:uppercase;
     border:0;
     background:transparent;

@@ -23,8 +23,13 @@
   <body>
     
     <!-- Navigation -->
-    <nav role="main" id="desktop">
-      <a href="#main" class="off-page">Skip to main content</a>
+    <nav role="navigation" id="desktop">
+      <h2 class="sr-only">Main Navigation</h2>
+      <a href="#main" class="skip-nav">
+        <span class="typcn typcn-arrow-forward" aria-hidden="true">
+          <span class="sr-only">Skip to Main Content</span>
+        </span>
+      </a>
       <button id="mobile-menu" aria-hidden="true">Menu &rsaquo;</button>
       <ul id="main-nav" aria-hidden="false">
         <li>
@@ -54,7 +59,7 @@
           <a href="/cognitive">Cognitive</a>
         </li>
       </ul>
-      <a class="logo" href="/">Access</a>
+      <a class="logo" href="/"><span class="typcn typcn-lock-open" aria-hidden="true"></span> Access</a>
     </nav>
     <div id="mobile-nav-bounds"></div>
     <div id="mobile-nav-overlap"></div>
