@@ -7,5 +7,65 @@
 }
 
 *:focus {
-  .focus-shadow;
+  .focus-shadow!important;
+}
+
+/*
+  <a class="access-skip-nav">:
+  - width:1px so screen readers don't skip it
+  - overflow:hidden/padding:0 so it's hidden for full-sighted users
+  - on focus, force display with width & padding for low-sighted users
+  
+a.skip-nav {
+  padding:0;
+  width:1px;
+  overflow:hidden;
+  .transition(all 0.3s ease);
+  &:focus {
+    width:auto;
+    padding:1rem;
+  }
+}
+*/
+
+/*-----------------------
+  # Accordions
+-----------------------*/
+
+// <* class="access-accordion">:
+// - block-level element, container
+.access-accordion {
+  
+  display:block;
+  position:relative;
+  margin-bottom:1rem;
+  
+  // <h5>:
+  // toggle-control for single accordion menu
+  a[role=tab] {
+    display:block;
+    text-align:center;
+    cursor:pointer;
+    padding:.5rem 0;
+    font-size:1.4em;
+  }
+  
+  // <ul>:
+  // toggle-able accordion content
+  // has aria-hidden="true" by default
+  ul {
+    height:0;
+    overflow:hidden;
+    background:#f4f4f4;
+    border-bottom:1px solid #eee;
+    .border-radius(3px);
+      li {
+        display:inline-block;
+        padding:.7rem;
+        padding-bottom:.4rem;
+      }
+      input, label {
+        display:inline;
+      }
+  }
 }

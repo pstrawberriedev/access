@@ -1,0 +1,91 @@
+// Catalog
+// Accessible Product Catalog
+
+// Using .access-accordion
+// @ accessibility.less
+.access-accordion {
+
+  ul {
+    background:#f4f4f4;
+    border-bottom:1px solid #eee;
+  }
+
+}
+
+
+// <* class="filter-active">
+// Display Active filters for the Catalog
+// Default: no filters active
+.filter-active {
+  padding-bottom:.8rem;
+  border-bottom:1px solid #eee;
+  margin-bottom:1.5rem;
+
+}
+
+
+// Catalog Product Display
+// - supports filtering: see HTML comments
+#catalog-products {
+
+  
+  // <a class="catalog-single-product">
+  // - wrapping products in <a> for accessibility and ease-of-use
+  //   -- make sure to declare display:block for wrapping <a>'s
+  // - <a>-wrapping validates in HTML5, so long as there are no "interactive elements within it"
+  //   -- i.e. another <a> or any clickable element
+  a.catalog-single-product {
+    
+    display:block;
+    position:relative;
+    margin-bottom:1.5rem;
+    
+    // reset figure styling
+    figure {
+      margin:0!important;
+      padding:0!important;
+    }
+    
+    // images should all be the same dimensions
+    img {
+      max-width:100%;
+      height:auto;
+    }
+    
+    // Using <p> as Description
+    // Using <p> to hold <span> for Price and Stock
+    p {
+      
+      display:block;
+      margin-bottom:.4rem;
+      font-weight:bold;
+      font-size:1em;
+      .clearfix;
+      width:100%;
+      
+        // Using span:first-child for Price
+        // Using all other spans as right-aligned information (stock)
+        span {
+          display:block;
+          float:left;
+          color:green;
+          &:last-child {
+            float:right;
+            color:@color-dark;
+          }
+        }
+      
+    }
+    
+    // Using <figcaption> to display product short description
+    figcaption {
+      padding-top:.4rem;
+      border-top:2px solid #f6f6f6;
+      font-size:.8em;
+      color:#666;
+      font-style:italic;
+    }
+    
+  }
+
+}

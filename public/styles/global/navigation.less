@@ -22,14 +22,17 @@ nav#desktop {
     text-transform:uppercase;
   }
 
-  a.skip-nav {
+  a.access-skip-nav {
     float:left;
     display:block;
-    padding:1rem;
-    .transition(background 0.3s ease);
-       &:hover {
-        background:rgba(0,0,0,.1);
-      }
+    padding:0;
+    width:1px;
+    overflow:hidden;
+    .transition(all 0.3s ease);
+    &:focus {
+      width:auto;
+      padding:1rem;
+    }
   }
   
   #mobile-menu {
@@ -91,6 +94,7 @@ nav#desktop {
       width:100%;
       font-size:1.2em;
         a {
+          z-index:-1; //javascript is emulating clicks and hover states here
           position:relative;
           display:block;
           padding:.6rem 0 .6rem 1.5rem;

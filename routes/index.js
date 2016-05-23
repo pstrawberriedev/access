@@ -15,4 +15,14 @@ router.get('/', function(req, res) {
   });
 });
 
+/* GET catalog page. */
+router.get('/catalog', function(req, res) {
+
+  //Just passing data through to views
+  res.render('ecommerce/catalog', { 
+    page: 'Catalog',
+    master: master
+  });
+});
+
 module.exports = router;

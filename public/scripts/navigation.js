@@ -7,6 +7,7 @@ var ww = window.innerWidth;
 var desktopNav = $('#main-nav');
 var hamburger = $('#mobile-menu');
 var mobileNav = $('#mobile-nav');
+var mobileNavLi = $('#mobile-nav li');
 var mobileNavBounds = $('#mobile-nav-bounds');
 var mobileNavOverlap = $('#mobile-nav-overlap');
 
@@ -30,6 +31,10 @@ $(document).ready(function() {
 // Window Scroll functions
 $(window).on('scroll', function() {
     scrollPosition = $(this).scrollTop();
+  
+    if(hamburger.hasClass('active')) {
+      closeNav();
+    }
     
     // Hamburger Opacity
     if (scrollPosition >= 70) {
@@ -42,7 +47,7 @@ $(window).on('scroll', function() {
   
 });
 
-// Nav Menu
+// Mobile Nav Menu
 function closeNav() {
   TweenLite.to(mobileNav, .25, { x: "-270px", autoAlpha:0, ease: Power1.easeOut })
   TweenLite.to(hamburger, .3, { color:"#424242", ease: Power1.easeOut })
@@ -82,11 +87,30 @@ hamburger.on('click', function() {
   
 });
 
+// Emulate Hover on Mobile Nav Links
+mobileNavLi.mouseenter(function() {
+  TweenLite.to($(this), 0.25, { background:"rgba(0,0,0,0.1)", ease: Power1.easeInOut });
+  mobileNav.css('cursor','pointer');
+}).mouseleave(function() {
+  TweenLite.to($(this), 0.25, { background:"rgba(255,255,255,0)", ease: Power1.easeInOut });
+  mobileNav.css('cursor','move');
+});
+
 // Drag Nav to Close
 Draggable.create(mobileNav, {
   type:"x",
   bounds: mobileNavBounds,
+  minimumMovement:5,
   throwProps:true,
+    // Allow both clicking and dragging on links (<a> needs z-index:-1)
+    onClick:function(e) {
+      var jqueryEvent = $(e.target);
+      if(jqueryEvent.is('li')) {
+        var link = jqueryEvent.find('a')[0];
+        console.log(link);
+        link.click();
+      }
+    },
     onDragEnd:function() {
       if (this.hitTest(mobileNavOverlap, 100)) {
         closeNav();

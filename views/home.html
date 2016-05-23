@@ -65,7 +65,7 @@
         <section class="col-sm-6">
           <p>
            <b class="header">
-             <span class="typcn typcn-user-outline" aria-hidden="true"></span> Cognitive
+             <span class="typcn typcn-spiral" aria-hidden="true"></span> Cognitive
            </b>
             The cognitive aspect of accessibility is tied to the organization and understandability of pages. Media that assists in content comprehension is of great help to individuals facing cognitive challenges.
           </p>
@@ -77,12 +77,42 @@
     </section>
     
     
-    <!-- Types of Disabilities Overview -->
+    <!-- Test Cases -->
     <section class="in-page overview">
 
-      <h2 id="overview">Accessibility Overview</h2>
+      <h2 id="test-case-ecommerce">Test Case: eCommerce <span class="typcn typcn-shopping-cart" aria-hidden="true"></span></h2>
       
+      <p>Since the initial motivation for Access was based upon making essential eCommerce pages accessible, it seems only fitting to open with this test case. In this case, we're testing catalog pages and individual product pages.</p>
       
+      <div class="row">
+        
+        <div class="col-sm-6">
+          <p>
+            <b class="header">Product Catalog</b>
+            <ul>
+              <b>Expected Elements:</b>
+              <li>Filter menu (hidden elements, sub-navigation)</li>
+              <li>Images (alt descriptions)</li>
+              <li>Favorites feature (icon with description)</li>
+              <li>Pagination (screen-reader friendly)</li>
+            </ul>
+          </p>
+        </div>
+        
+        <div class="col-sm-6">
+          <p>
+            <b class="header">Single Product</b>
+            <ul>
+              <b>Expected Elements:</b>
+              <li>Main &amp; alternate images (alt descriptions)</li>
+              <li>Social Sharing pop-out menu (hidden elements)</li>
+              <li>Information-filled Accordions (hidden elements)</li>
+              <li>CTA Buttons: Add to Cart, Add to Wishlist (explicit dependency on information accuracy via screenreader)</li>
+            </ul>
+          </p>
+        </div>
+        
+      </div>
       
     </section>
 

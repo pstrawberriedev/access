@@ -1,0 +1,243 @@
+{{> header}}
+  
+<main class="container" id="main">
+
+  <article id="catalog">
+
+    <!-- Introduction -->
+    <section class="in-page">
+
+      <h1>Product Catalog</h1>
+
+      <div id="catalog-filter">
+        
+        <!-- 
+            Access Accordion - 
+            - accordion wrapper + trigger: always visible
+            - accordion content hidden by:
+              -- height:0; overflow:hidden;
+              -- aria-hidden="true"
+            - javascript is looking for:
+              -- Wrapper:  .access-accordion
+              -- Accordion Trigger:  [role=tab]
+              -- Accordion Content:  [role=tabpanel]
+        -->
+        <section role="tablist" class="access-accordion" data-filter="category">
+         
+          <a href="#" id="filter-category-header" role="tab" aria-controls="filter-category" class="Product Category" tabindex="0">
+            Sort by Category <span class="typcn typcn-arrow-sorted-down" aria-hidden="true"></span>
+          </a>
+          
+          <ul role="tabpanel" id="filter-category" aria-labelledby="filter-category-header" aria-hidden="true">
+           
+            <li>
+              <input type="checkbox" id="pets" name="pets" value="pets" />
+              <label for="pets">Pets</label>
+            </li>
+            
+            <li>
+              <input type="checkbox" id="electronics" name="electronics" value="electronics" />
+              <label for="electronics">Electronics</label>
+            </li>
+            
+            <li>
+              <input type="checkbox" id="plants" name="plants" value="plants" />
+              <label for="plants">Plants</label>
+            </li>
+            
+            <li>
+              <input type="checkbox" id="food" name="food" value="food" />
+              <label for="food">Food</label>
+            </li>
+            
+          </ul>
+          
+        </section>
+        
+        
+        <!-- 
+            Applied Filters
+            - section hidden with display:none [no aria needed]
+            - hidden by default (or if no filters selected)
+        -->
+        <div class="filter-active">
+          <b>Applied Filters:</b>
+          <span data-filter-option="clear">None</span>
+        </div>
+        
+      </div>
+      
+      
+      <!--
+          Product Catalog
+          - using bootstrap grid
+          - should always be displayed
+          - visible products are manipulable via filter menu
+       -->
+      <div id="catalog-products">
+        
+        <div class="row">
+          
+          <!--
+              Single Product
+              - data-[filter] controls filtering
+                  i.e. if filter menu has: data-filter="category"
+                  single product would have: data-category="___"
+          -->
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <a class="catalog-single-product" data-category="pets" href="#pets" >
+              <figure>
+                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
+                <p>Product Name</p>
+                <p>
+                  <span>$150</span>
+                  <span>3 left</span>
+                </p>
+                <figcaption>Short item description, that's all</figcaption>
+              </figure>
+            </a>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </section>
+
+
+  </article>
+
+</main>
+
+{{> footer}}    

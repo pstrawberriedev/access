@@ -42,6 +42,9 @@ app.engine('html', require('hbs').__express);
 hbs.registerPartials(path.join(__dirname + '/views/partials'));
 // watch
 hbsutils.registerWatchedPartials(path.join(__dirname + '/views/partials'));
+
+// Handlebars helpers
+//~~~~~~~~~~~~~~~~~~~~~~~
 // reverse array helper
 hbs.registerHelper('reverse', 
 	function( collection, options ){
