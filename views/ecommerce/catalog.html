@@ -4,8 +4,8 @@
 
   <article id="catalog">
 
-    <!-- Introduction -->
-    <section class="in-page">
+    <!-- Catalog -->
+    <section id="catalog" class="in-page">
 
       <h1>Product Catalog</h1>
 
@@ -57,12 +57,25 @@
         
         <!-- 
             Applied Filters
-            - section hidden with display:none [no aria needed]
-            - hidden by default (or if no filters selected)
+            - individual filters controlled by javascript:
+              -- [data-filter-remove="*"]
+            - filters wrapped in <a>, preventDefault() used to prevent scrolling
         -->
         <div class="filter-active">
           <b>Applied Filters:</b>
-          <span data-filter-option="clear">None</span>
+          <a href="#" data-filter-remove="all">
+            All Products
+          </a>
+          <!--
+          <a href="#" data-filter-remove="all">
+            <span class="sr-only">Remove filter </span>
+            All Products
+            <span class="" aria-hidden="true">
+              <i aria-hidden="true" class="default">x</i>
+              <i aria-hidden="true" class="hovered">Remove</i>
+            </span>
+          </a>
+          -->
         </div>
         
       </div>
@@ -84,150 +97,23 @@
                   i.e. if filter menu has: data-filter="category"
                   single product would have: data-category="___"
           -->
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <a class="catalog-single-product" data-category="pets" href="#pets" >
-              <figure>
-                <img src="http://lorempixel.com/768/400/" alt="Short description goes here, of course" title="Short description goes here, of course" />
-                <p>Product Name</p>
-                <p>
-                  <span>$150</span>
-                  <span>3 left</span>
-                </p>
-                <figcaption>Short item description, that's all</figcaption>
-              </figure>
-            </a>
-          </div>
+          {{#products}}
+            {{#catalog}}
+              <div class="col-sm-4 col-md-3">
+                <a class="catalog-single-product" data-category="{{category}}" href="#pets" >
+                  <figure>
+                    <img src="{{image}}" alt="{{short}}" title="{{short}}" />
+                    <p>{{name}}</p>
+                    <p>
+                      <span>${{price}}</span>
+                      <span>{{stock}} left</span>
+                    </p>
+                    <figcaption>{{short}}</figcaption>
+                  </figure>
+                </a>
+              </div>
+            {{/catalog}}
+          {{/products}}
           
         </div>
         
