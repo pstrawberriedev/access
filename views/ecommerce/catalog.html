@@ -98,21 +98,19 @@
                   single product would have: data-category="___"
           -->
           {{#products}}
-            {{#catalog}}
-              <div class="col-sm-4 col-md-3">
-                <a class="catalog-single-product" data-category="{{category}}" href="#pets" >
-                  <figure>
-                    <img src="{{image}}" alt="{{short}}" title="{{short}}" />
-                    <p>{{name}}</p>
-                    <p>
-                      <span>${{price}}</span>
-                      <span>{{stock}} left</span>
-                    </p>
-                    <figcaption>{{short}}</figcaption>
-                  </figure>
-                </a>
-              </div>
-            {{/catalog}}
+            <div class="col-sm-4 col-md-3">
+              <a class="catalog-single-product" data-category="{{category}}" href="#pets" >
+                <figure>
+                  <img src="{{image}}" alt="{{short}}" title="{{short}}" />
+                  <p>{{name}}</p>
+                  <p>
+                    <span>${{price}}</span>
+                    <span>{{stock}} left</span>
+                  </p>
+                  <figcaption>{{short}}</figcaption>
+                </figure>
+              </a>
+            </div>
           {{/products}}
           
         </div>
