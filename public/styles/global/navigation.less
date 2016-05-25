@@ -28,11 +28,23 @@ nav#desktop {
     padding:0;
     width:1px;
     overflow:hidden;
-    .transition(all 0.3s ease);
+    .transition(all 0.5s ease);
     &:focus {
       width:auto;
       padding:1rem;
     }
+  }
+  
+  a.access-close-mobile {
+    display:block;
+    padding:0;
+    overflow:hidden;
+    height:1px;
+    .transition(all 0.5s ease);
+      &:focus {
+        height:auto;
+        padding:1rem;
+      }
   }
   
   #mobile-menu {

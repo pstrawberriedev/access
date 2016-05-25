@@ -24,7 +24,7 @@
         -->
         <section role="tablist" class="access-accordion" data-filter="category">
          
-          <a href="#" id="filter-category-header" role="tab" aria-controls="filter-category" class="Product Category" tabindex="0">
+          <a href="#" id="filter-category-header" role="tab" aria-controls="filter-category" class="Product Category" aria-expanded="false">
             Sort by Category <span class="typcn typcn-arrow-sorted-down" aria-hidden="true"></span>
           </a>
           
@@ -62,15 +62,16 @@
             - filters wrapped in <a>, preventDefault() used to prevent scrolling
         -->
         <div class="filter-active">
-          <b>Applied Filters:</b>
+          <h5>Applied Filters:</h5>
           <a href="#" data-filter-remove="all">
-            All Products
+            <span class="sr-only">No Catalog Filters Selected</span>
+            <span aria-hidden="true">All Products</span>
           </a>
           <!--
           <a href="#" data-filter-remove="all">
             <span class="sr-only">Remove filter </span>
             All Products
-            <span class="" aria-hidden="true">
+            <span class="remove" aria-hidden="true">
               <i aria-hidden="true" class="default">x</i>
               <i aria-hidden="true" class="hovered">Remove</i>
             </span>
@@ -88,7 +89,8 @@
           - visible products are manipulable via filter menu
        -->
       <div id="catalog-products">
-        
+        <h2 class="sr-only">Catalog Item Listing</h2>
+
         <div class="row">
           
           <!--
@@ -100,14 +102,19 @@
           {{#products}}
             <div class="col-sm-4 col-md-3">
               <a class="catalog-single-product" data-category="{{category}}" href="#pets" >
+                <span class="sr-only">Selected product</span>
+                <p>{{name}}</p>
                 <figure>
-                  <img src="{{image}}" alt="{{short}}" title="{{short}}" />
-                  <p>{{name}}</p>
-                  <p>
-                    <span>${{price}}</span>
-                    <span>{{stock}} left</span>
+                  <img src="{{image}}" alt="{{short}}" />
+                  <p class="price">
+                    <span class="sr-only">Price </span>
+                    <span aria-hidden="true">$</span>{{price}}
+                    <span class="sr-only"> Dollars</span>
                   </p>
-                  <figcaption>{{short}}</figcaption>
+                  <p class="stock">
+                    <span class="sr-only">In stock </span>{{stock}} 
+                    <span aria-hidden="true">left</span>
+                  </p>
                 </figure>
               </a>
             </div>

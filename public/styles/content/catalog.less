@@ -22,6 +22,12 @@
   border-bottom:1px solid #eee;
   margin-bottom:1.5rem;
 
+  h5 {
+    display:inline-block;
+    margin-right:.6rem;
+    padding:0;
+  }
+  
   // Individual Filters
   [data-filter-remove] {
     display:inline-block;
@@ -30,7 +36,7 @@
     .border-radius(2px);
     border:1px solid #eee;
     font-size:.8em;
-      span {
+      span.remove {
         //.transition(all .2s ease);
         position:absolute;
         top:0;
@@ -43,7 +49,7 @@
           i.hovered {display:none;}
       }
       &:hover {
-        span {
+        span.remove {
           left:-1px;
           bottom:-1px;
           right:-1px;
@@ -102,24 +108,30 @@
       margin-bottom:.4rem;
       font-weight:bold;
       font-size:1em;
-      .clearfix;
       width:100%;
       
-        // Using span:first-child for Price
-        // Using all other spans as right-aligned information (stock)
-        span {
-          display:block;
+        &.price {
           float:left;
+          width:auto;
           color:green;
-          &:last-child {
-            float:right;
-            color:@color-dark;
-          }
+        }
+      
+        &.stock {
+          float:right;
+          width:auto;
+          text-align:right;
+          color:@color-dark;
         }
       
     }
     
-    // Using <figcaption> to display product short description
+    // Clearfix on Figure because of floating <p> for price and stock
+    figure { 
+      .clearfix;
+      border-bottom:2px solid #f6f6f6;
+    }
+    
+    // If using <figcaption> to display additional information
     figcaption {
       padding:.4rem 0 .4rem .3rem;
       border-top:1px solid #f6f6f6;

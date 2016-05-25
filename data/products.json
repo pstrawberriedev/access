@@ -1,12 +1,13 @@
 
 [
+  
   {
     "name" : "Aligator",
     "price" : 500,
     "category" : "pets",
-    "image" : "/images/test1.jpg",
-    "stock" : 2,
-    "short" : "Aligators for your daily needs",
+    "image" : "/images/hamburg.jpg",
+    "stock" : 1,
+    "short" : "A new friend to follow you around",
     "description" : "Aligators can grow up to 46 feet in length, but they always start out as babies fresh from the egg. Our aligators are farm-raised and have been genetically enhanced to eat only grass and burglars - perfect for the whole family!"
   },
 
@@ -15,8 +16,49 @@
     "price" : 1200,
     "category" : "electronics",
     "image" : "/images/test1.jpg",
-    "stock" : 28,
-    "short" : "Computers are everywhere",
+    "stock" : 13,
+    "short" : "Blazing fast and up-to-date technology",
     "description" : "Conventionally, a computer consists of at least one processing element, typically a central processing unit (CPU), and some form of memory. Since a sequence of operations can be readily changed, the computer can solve more than one kind of problem."
+  },
+  
+  {
+    "name" : "Gummy Worms",
+    "price" : 5,
+    "category" : "food",
+    "image" : "/images/hamburg.jpg",
+    "stock" : 5,
+    "short" : "Delicious gummy treats you'll love",
+    "description" : "These gummy worms are the best gummy worms you'll ever taste. Try some today...we dare you!"
+  },
+  
+  {
+    "name" : "Venus Fly Trap",
+    "price" : 25,
+    "category" : "plants",
+    "image" : "/images/test1.jpg",
+    "stock" : 2,
+    "short" : "A fun plant for the kids",
+    "description" : "Sick of trying to swat flies? Buy this venus fly trap, it will do all of the swatting for you, and it also eats roast beef in the winter."
+  },
+  
+  {
+    "name" : "Rhinocerous",
+    "price" : 8600,
+    "category" : "pets",
+    "image" : "/images/hamburg.jpg",
+    "stock" : 1,
+    "short" : "Rhinocerous: man's best friend",
+    "description" : "Love dogs? Forget about it! Rhinocerous' are the new hottest pets and make dogs look like wimps."
+  },
+  
+  {
+    "name" : "Seasoned Steak",
+    "price" : 12,
+    "category" : "food",
+    "image" : "/images/test1.jpg",
+    "stock" : 40,
+    "short" : "Delicious, tender steak",
+    "description" : "Our pride and joy, this steak will leave your mouth watering for more. You'll eat so much, in fact, we only let you buy 5 at a time."
   }
+  
 ]

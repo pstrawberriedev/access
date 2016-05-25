@@ -7,6 +7,7 @@ var ww = window.innerWidth;
 var desktopNav = $('#main-nav');
 var hamburger = $('#mobile-menu');
 var mobileNav = $('#mobile-nav');
+var mobileNavClose = $('#close-mobile-menu');
 var mobileNavLi = $('#mobile-nav li');
 var mobileNavBounds = $('#mobile-nav-bounds');
 var mobileNavOverlap = $('#mobile-nav-overlap');
@@ -52,6 +53,7 @@ function closeNav() {
   TweenLite.to(mobileNav, .25, { x: "-270px", autoAlpha:0, ease: Power1.easeOut })
   TweenLite.to(hamburger, .3, { color:"#424242", ease: Power1.easeOut })
   hamburger.removeClass('active');
+  hamburger.attr("aria-expanded","false");
   mobileNav.attr("aria-hidden","true");
 }
 function openNav() {
@@ -60,8 +62,10 @@ function openNav() {
     TweenLite.to(hamburger, .3, { color:"#fff", ease: Power1.easeOut })
   }
   hamburger.addClass('active');
+  hamburger.attr("aria-expanded","true");
   mobileNav.attr("aria-hidden","false");
 }
+
 hamburger.on('click', function() {
   
   // Default Action
@@ -84,6 +88,13 @@ hamburger.on('click', function() {
       closeNav();
     }
   });
+  
+});
+
+mobileNavClose.on('click', function() {
+
+  closeNav();
+  hamburger.focus();
   
 });
 

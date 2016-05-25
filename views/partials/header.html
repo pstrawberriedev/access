@@ -9,7 +9,7 @@
     
     <!-- Title -->
     <title>
-      {{master.title}} {{#if page}} > {{page}}{{/if}}
+      {{master.title}} {{#if page}} | {{page}}{{/if}}
     </title>
 
     <!-- CSS -->
@@ -24,13 +24,14 @@
     
     <!-- Navigation -->
     <nav role="navigation" id="desktop">
-      <h2 class="sr-only">Main Navigation</h2>
       <a href="#main" class="access-skip-nav">
         <span class="typcn typcn-arrow-forward" aria-hidden="true">
-          <span class="sr-only">Skip to Main Content</span>
-        </span>
+        </span><span class="sr-only">Skip to Main Content</span>
       </a>
-      <button id="mobile-menu" aria-hidden="true">Menu &rsaquo;</button>
+      <button id="mobile-menu" role="tab" aria-expanded="false">
+       <span class="sr-only">Open Mobile Menu</span>
+       <span aria-hidden="true">Menu &rsaquo;</span>
+      </button>
       <ul id="main-nav" aria-hidden="false">
         <li>
           <a href="/">Overview</a>
@@ -39,7 +40,8 @@
           <a href="/catalog">eCommerce</a>
         </li>
       </ul>
-      <ul role="menubar" id="mobile-nav" aria-hidden="true">
+      <ul role="navigation" role="tabpanel" id="mobile-nav" aria-hidden="true">
+        <a class="access-close-mobile" href="#" id="close-mobile-menu">Close Menu</a>
         <li>
           <a href="/">Overview</a>
         </li>

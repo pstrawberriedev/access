@@ -6,8 +6,14 @@
   top:-9999px;
 }
 
-*:focus {
-  .focus-shadow!important;
+.focus-state {
+  .transition(all .5s ease);
+  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2);
+  background:rgba(255, 255, 0, 0.2);
+}
+
+:focus {
+  .focus-state!important;
 }
 
 /*
@@ -28,8 +34,9 @@ a.skip-nav {
 }
 */
 
+
 /*-----------------------
-  # Accordions
+  #Accordions
 -----------------------*/
 
 // <* class="access-accordion">:
@@ -40,9 +47,9 @@ a.skip-nav {
   position:relative;
   margin-bottom:1rem;
   
-  // <h5>:
+  // *[role=tab]: easiest if this element is natively tabbable
   // toggle-control for single accordion menu
-  a[role=tab] {
+  [role=tab] {
     display:block;
     text-align:center;
     cursor:pointer;
