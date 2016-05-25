@@ -3,16 +3,18 @@
 */
 
 // Persisting Nav + Desktop Nav
-nav#desktop {
+nav#global {
 
   display:block;
   position:relative;
   width:100%;
+  height:52px;
   margin-bottom:2rem;
   background:transparent;
   .shadow-1;
   .clearfix;
   
+  // Logo right-aligned
   .logo {
     display:inline-block;
     float:right;
@@ -22,6 +24,7 @@ nav#desktop {
     text-transform:uppercase;
   }
 
+  // Skip to main content Link
   a.access-skip-nav {
     float:left;
     display:block;
@@ -35,20 +38,21 @@ nav#desktop {
     }
   }
   
-  a.access-close-mobile {
-    display:block;
-    padding:0;
-    overflow:hidden;
-    height:1px;
-    .transition(all 0.5s ease);
-      &:focus {
-        height:auto;
-        padding:1rem;
+  // Wrapper for Mobile Menu
+  #mobile-menu-wrap {
+    display:none;
+      li {
+        list-style:none;
+      }
+      @media (max-width:767px) {
+        display:block;
       }
   }
   
+  // Trigger for Mobile Menu
   #mobile-menu {
-    display:none;
+    display:block;
+    float:left;
     padding:1rem;
     text-transform:uppercase;
     border:0;
@@ -57,33 +61,76 @@ nav#desktop {
      &:hover {
       background:rgba(0,0,0,.1);
     }
-    
-    @media(max-width:767px) {
+  }
+  
+}
+
+
+// Desktop Nav
+#main-nav {
+  display:block;
+  position:relative;
+  float:left;
+    li {
       display:block;
       float:left;
+      height:100%;
+        a {
+          display:block;
+          padding:1rem;
+          .transition(background 0.3s ease);
+             &:hover {
+              background:rgba(0,0,0,.1);
+            }
+        }
     }
+    @media(max-width:767px) {display:none;}
+}
+
+// LI Flyaways
+li {position:relative;}
+li.flyaway {
+
+  li {width:100%;}
+  >a {
+    //additional padding + text arrow (&rsaquo;)
+    padding-right:1.6rem!important;
+
+    &:after {
+      content:"\203A";
+      font-weight:bold;
+      position:absolute;
+      right:.65rem;
+      top:1.05rem;
+      .transform(rotate(90deg));
+    }
+
   }
-  
-  #main-nav {
-    display:block;
-    position:relative;
-    float:left;
+
+  ul {
+    z-index:3;
+    background:#fff;
+    display:none;
+    position:absolute;
+    top:100%;
+    width:120%;
+    .shadow-2;
+    text-align:left;
       li {
         display:block;
-        float:left;
-        height:100%;
-          a {
-            display:block;
-            padding:1rem;
-            .transition(background 0.3s ease);
-               &:hover {
-                background:rgba(0,0,0,.1);
-              }
-          }
       }
-      @media(max-width:767px) {display:none;}
   }
-  
+
+  &.active {
+
+    >a:after {
+      .transform(rotate(-90deg));
+    }
+
+    ul {display:block;}
+
+  }
+
 }
 
 // Mobile Nav
@@ -92,13 +139,12 @@ nav#desktop {
   display:block;
   .opacity(0);
   .transform(translate(-270px,0));
-  top:0;
+  top:52px;
   bottom:0;
   height:100%;
   width:270px;
   z-index:3;
   background:rgba(255,255,255,.99);
-  padding-top:60px;
   .shadow-2;
     li {
       display:block;
@@ -109,7 +155,7 @@ nav#desktop {
           z-index:-1; //javascript is emulating clicks and hover states here
           position:relative;
           display:block;
-          padding:.6rem 0 .6rem 1.5rem;
+          padding:.6rem 0 .6rem 1rem;
           width:100%;
           height:100%;
           border-bottom:1px solid rgba(0,0,0,0.1);
@@ -120,9 +166,43 @@ nav#desktop {
           }
       }
     }
-    @media(max-width:850px) {
-      padding-top:0;
+    #close-mobile-menu {
+      display:none;
+      background:rgba(0,0,0,.3);
     }
+    &.triggered {
+      #close-mobile-menu {
+        display:block;
+      }
+      top:0;
+    }
+  
+    // LI Flyaways in Mobile Nav
+    li.flyaway {
+      
+      a {
+        font-size: .8em;
+        padding-left:1.5rem;
+      }
+      >a {
+        font-size:1em;
+        padding-left:1rem;
+      }
+      >a:after {
+        top:.7rem;
+      }
+      
+      ul {
+        background:transparent;
+        position:relative;
+        top:auto;
+        width:auto;
+        .shadow-off;
+      }
+      
+    }
+  
+  
 }
 
 // Draggable Bounds - Mobile Nav

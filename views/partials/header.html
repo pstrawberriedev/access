@@ -23,33 +23,69 @@
   <body>
     
     <!-- Navigation -->
-    <nav role="navigation" id="desktop">
+    <nav role="navigation" id="global">
+       
+      <!-- Skip to Content link -->
       <a href="#main" class="access-skip-nav">
         <span class="typcn typcn-arrow-forward" aria-hidden="true">
         </span><span class="sr-only">Skip to Main Content</span>
       </a>
-      <button id="mobile-menu" role="tab" aria-expanded="false">
-       <span class="sr-only">Open Mobile Menu</span>
-       <span aria-hidden="true">Menu &rsaquo;</span>
-      </button>
+      
+      <!-- Main/Desktop Nav -->
       <ul id="main-nav" aria-hidden="false">
         <li>
           <a href="/">Overview</a>
         </li>
-        <li>
-          <a href="/catalog">eCommerce</a>
+        <li class="flyaway" aria-haspopup="true" role="menu">
+          <a href="#" aria-expanded="false">eCommerce</a>
+          <ul>
+            <li>
+              <a href="/catalog">Product Catalog</a>
+            </li>
+            <li>
+              <a href="#">Single Product</a>
+            </li>
+          </ul>
         </li>
       </ul>
-      <ul role="navigation" role="tabpanel" id="mobile-nav" aria-hidden="true">
-        <a class="access-close-mobile" href="#" id="close-mobile-menu">Close Menu</a>
+      
+      <!-- Mobile Nav -->
+      <ul id="mobile-menu-wrap" role="presentation">
         <li>
-          <a href="/">Overview</a>
+          <!-- Hamburger (Mobile) Menu Button -->
+          <button id="mobile-menu" role="tab" aria-expanded="false">
+            <span class="sr-only">Toggle Mobile</span>
+            Menu &rsaquo;
+          </button>
         </li>
         <li>
-          <a href="/catalog">eCommerce</a>
+          <ul role="tabpanel" id="mobile-nav" aria-hidden="true">
+            <li>
+              <a href="#" id="close-mobile-menu">Close Menu</a>
+            </li>
+            <li>
+              <a href="/">Overview</a>
+            </li>
+            <li class="flyaway" aria-haspopup="true" role="menu">
+              <a href="#" aria-expanded="false">eCommerce</a>
+              <ul>
+                <li>
+                  <a href="/catalog">Product Catalog</a>
+                </li>
+                <li>
+                  <a href="#">Single Product</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </li>
       </ul>
+      
+      <!-- Logo -->
       <a class="logo" href="/"><span class="typcn typcn-lock-open" aria-hidden="true"></span> Access</a>
+      
     </nav>
+    
+    <!-- Bounds (non-visible) for Mobile Nav Touch-compatibility -->
     <div id="mobile-nav-bounds"></div>
     <div id="mobile-nav-overlap"></div>

@@ -12,8 +12,11 @@
   background:rgba(255, 255, 0, 0.2);
 }
 
-:focus {
-  .focus-state!important;
+// Must define specific elements, since IE puts :focus on the body for some reason
+a, button {
+  &:focus {
+    .focus-state!important;
+  }
 }
 
 /*

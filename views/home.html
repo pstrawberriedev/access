@@ -13,7 +13,7 @@
         An accessibility endeavor focusing on the four outlined areas of disability affecting web use: <span>visual</span>, <span>hearing</span>, <span>motor</span>, and <span>cognitive</span>.
       </p>
 
-      <p>This project's purpose is to spread awareness of accessibility concerns regarding internet use by disabled individuals, as well as to provide a condensed source of information that helps in bringing web sites as close in adherance as possible to <a target="_blank" href="https://www.w3.org/TR/WCAG20/">WCAG 2 compliance</a>.</p>
+      <p>This project's purpose to provide code examples that help in bringing web sites as close in adherance as possible to <a target="_blank" href="https://www.w3.org/TR/WCAG20/">WCAG 2 compliance</a>.</p>
 
       <p>
         Access is a tool to educate oneself about accessible HTML application &amp; technique. By laying out our markup with accessibility as a guide, we positively affect other areas of front-end development and broaden our view of the web as a whole.
@@ -63,12 +63,12 @@
         </section>
 
         <section class="col-sm-6">
-          <p>
            <h5 class="paragraph-header">
              <span class="typcn typcn-spiral" aria-hidden="true"></span> Cognitive
            </h5>
+           <p>
             The cognitive aspect of accessibility is tied to the organization and understandability of pages. Media that assists in content comprehension is of great help to individuals facing cognitive challenges.
-          </p>
+           </p>
         </section>
 
       </div>
@@ -77,12 +77,65 @@
     </section>
     
     
-    <!-- Test Cases -->
+    <!-- Test Case: Responsive Navbar -->
+    <section class="in-page overview">
+
+      <h2 id="test-case-navbar">Test Case: Responsive Navigation Bar <span class="typcn typcn-th-menu" aria-hidden="true"></span></h2>
+      
+      <p>Arguably, the most important area of a web site is the navigation. The navigation allows for quick access to all site pages and is an invaluable asset to all users.</p>
+      
+      <div class="row">
+        
+        <div class="col-sm-6">
+          <p>
+            <b class="header">
+              Universal Navigation (top of page)
+            </b>
+            <ul>
+              <b>Expected Elements:</b>
+              <li>Skip to content link (hidden, tabbable)</li>
+              <li>Logo Link (tabbable)</li>
+            </ul>
+          </p>
+        </div>
+        
+        <div class="col-sm-6">
+          <p>
+            <b class="header">
+              Desktop Navigation  (top of page)
+            </b>
+            <ul>
+              <b>Expected Elements:</b>
+              <li>Standard Links (tabbable)</li>
+              <li>Dropdown Menus via Link Hover (hidden, expandable, tabbable)</li>
+            </ul>
+          </p>
+        </div>
+        
+        <div class="col-sm-6">
+          <p>
+            <b class="header">
+              <a href="#" class="trigger-nav">Mobile Navigation</a>
+            </b>
+            <ul>
+              <b >Expected Elements:</b>
+              <li>Menu Button Trigger (triggers hidden menu, accessible, tabbable)</li>
+              <li>Mobile Menu (hidden, expandable, tabbable)</li>
+            </ul>
+          </p>
+        </div>
+        
+      </div>
+      
+    </section>
+    
+    
+    <!-- Test Case: eCommerce -->
     <section class="in-page overview">
 
       <h2 id="test-case-ecommerce">Test Case: eCommerce <span class="typcn typcn-shopping-cart" aria-hidden="true"></span></h2>
       
-      <p>Since the initial motivation for Access was based upon making essential eCommerce pages accessible, it seems only fitting to open with this test case. In this case, we're testing catalog pages and individual product pages.</p>
+      <p>The initial motivation for Access was based upon making essential eCommerce pages accessible. In this case, we're testing catalog pages and individual product pages.</p>
       
       <div class="row">
         
