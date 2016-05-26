@@ -96,7 +96,7 @@ accordion.each(function() {
   // Trigger Action (Open or Close Accordion)
   trigger.on('click', function(e) {
     
-    e.preventDefault();//since we have href="#", we don't want this to affect page scrolling
+    e.preventDefault();
     
     if(ariaHiddenCheck(inner) === 'true') {
       openAccordion();

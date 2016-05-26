@@ -18,6 +18,7 @@ var liFlyawayLink = $('li.flyaway>a');
 
 // Resize Function
 $(window).resize(function() {
+  
   ww = window.innerWidth;
   
   if(ww < 768) {
@@ -28,14 +29,15 @@ $(window).resize(function() {
     desktopNav.attr("aria-hidden","false");
   }
 
-  //return ww;
 });
+
+// Document Ready
 $(document).ready(function() {
   closeNav();
   $(window).trigger('resize');
 });
 
-// Window Scroll functions
+// Window Scroll
 $(window).on('scroll', function() {
   
     if(hamburger.hasClass('active')) {
@@ -45,6 +47,7 @@ $(window).on('scroll', function() {
 });
 
 // Mobile Nav Menu - Global Functions
+// -----------------------------------
 
 // Close Mobile Nav
 function closeNav() {
@@ -117,12 +120,15 @@ mobileNavLi.mouseenter(function() {
 
 // Drag Nav to Close
 Draggable.create(mobileNav, {
+  
   type:"x",
   bounds: mobileNavBounds,
   minimumMovement:5,
   throwProps:true,
+  
     // Allow both clicking and dragging on links (<a> needs z-index:-1)
     onClick:function(e) {
+      
       var jqueryEvent = $(e.target);
       if(jqueryEvent.is('li')) {
         var link = jqueryEvent.find('a')[0];
@@ -130,7 +136,9 @@ Draggable.create(mobileNav, {
         link.click();
         
       }
+      
     },
+  
     onDragEnd:function() {
       if (Draggable.hitTest(mobileNav,mobileNavOverlap, 120)) {
         closeNav();
@@ -138,6 +146,7 @@ Draggable.create(mobileNav, {
         openNav();
       }
     }
+  
 });
 
 
