@@ -81,7 +81,7 @@ function toggleNav() {
 
   // Close on Document Click
   $(document).on('click', function(event) {
-    if(!$(event.target).closest(hamburger).length && !$(event.target).closest(mobileNav).length && !$(event.target).closest(mobileNavPageTrigger).length && hamburger.hasClass('active')) {
+    if(!$(event.target).closest(hamburger).length && !$(event.target).closest(mobileNav).length && hamburger.hasClass('active')) {
       closeNav();
     }
   });
@@ -142,37 +142,41 @@ Draggable.create(mobileNav, {
 
 
 // LI Flyaways
-liFlyawayLink.on('click', function(e) {
+liFlyawayLink.each(function() {
   
-  $(this).each(function() {
+  var self = $(this).parent();
+  var linkTrigger = $(this);
+  var childMenu = self.find('ul').first();
     
-    var self = $(this).parent();
-    var linkTrigger = $(this);
-    var childMenu = self.find('ul').first();
+  $(this).on('click', function(e) {  
     
-    e.preventDefault();
+     e.preventDefault();
     
     if(!self.hasClass('active')) {
+      
       self.addClass('active');
       linkTrigger.attr('aria-expanded','true');
+      
     } else {
+      
       self.removeClass('active');
       linkTrigger.attr('aria-expanded','false');
+      
     }
     
   });
   
-  // Close on Document Click
-  $(document).on('click', function(event) {
+});
 
-    var linkTrigger = liFlyaway.find('a');
-    var childMenu = liFlyaway.find('ul');
+// Close on Document Click
+$(document).on('click', function(event) {
 
-    if(!$(event.target).closest(liFlyaway).length) {
-      liFlyaway.removeClass('active');
-      linkTrigger.attr('aria-expanded','false');
-    }
-    
-  });
-  
+  var linkTrigger = liFlyaway.find('a');
+  var childMenu = liFlyaway.find('ul');
+
+  if(!$(event.target).closest(liFlyaway).length) {
+    liFlyaway.removeClass('active');
+    linkTrigger.attr('aria-expanded','false');
+  }
+
 });
