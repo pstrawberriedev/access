@@ -7,14 +7,12 @@ var ww = window.innerWidth;
 
 var desktopNav = $('#main-nav');
 var hamburger = $('#mobile-menu');
-var mobileNavPageTrigger = $('.trigger-nav');
 var mobileNavWrap = $('#mobile-menu-wrap');
 var mobileNav = $('#mobile-nav');
 var mobileNavLi = $('#mobile-nav li');
 var mobileNavBounds = $('#mobile-nav-bounds');
 var mobileNavOverlap = $('#mobile-nav-overlap');
 
-var mobileNavClose = $('#close-mobile-menu');
 var liFlyaway = $('li.flyaway');
 var liFlyawayLink = $('li.flyaway>a');
 
@@ -50,24 +48,25 @@ $(window).on('scroll', function() {
 
 // Close Mobile Nav
 function closeNav() {
+  
   TweenLite.to(mobileNav, .25, { x: "-270px", autoAlpha:0, ease: Power1.easeOut })
   TweenLite.to(hamburger, .3, { color:"#424242", ease: Power1.easeOut })
   hamburger.removeClass('active');
   hamburger.attr("aria-expanded","false");
   mobileNav.attr("aria-hidden","true");
   mobileNav.removeClass('triggered');
-  if(ww > 767) {
-    mobileNavWrap.hide();
-  }
+  
 }
 
 // Open Mobile Nav
 function openNav() {
+  
   TweenLite.to(mobileNav, .25, { x: 0, autoAlpha:1, ease: Power1.easeOut })
   hamburger.addClass('active');
   hamburger.attr("aria-expanded","true");
   mobileNav.attr("aria-hidden","false");
   mobileNavWrap.show();
+  
 }
 
 // Toggle Mobile Nav (calls openNav() or closeNav()
@@ -98,35 +97,22 @@ function toggleNav() {
 
 // Default Mobile Nav Trigger
 hamburger.on('click', function() {
+  
   toggleNav();
-});
-
-// Trigger Mobile Nav in-page (gets a special class)
-mobileNavPageTrigger.on('click', function(e) {
-  e.preventDefault();
-  mobileNav.addClass('triggered');
-  toggleNav();
-  //using a settimeout for the length of the animation because the element is not able to be focused until it is visible
-  setTimeout(function() {
-    mobileNavClose.focus();
-  }, 250);
-  lastFocused = $(this);
-});
-
-// If mobile nav triggered in-page, return focus to the element that triggered it when it closes
-mobileNavClose.on('click', function(e) {
-  e.preventDefault();
-  closeNav();
-  lastFocused.focus();
+  
 });
 
 // Emulate Hover on Mobile Nav Links
 mobileNavLi.mouseenter(function() {
+  
   TweenLite.to($(this), 0.25, { background:"rgba(0,0,0,0.1)", ease: Power1.easeInOut });
   mobileNav.css('cursor','pointer');
+  
 }).mouseleave(function() {
+  
   TweenLite.to($(this), 0.25, { background:"rgba(255,255,255,0)", ease: Power1.easeInOut });
   mobileNav.css('cursor','move');
+  
 });
 
 // Drag Nav to Close
@@ -140,11 +126,13 @@ Draggable.create(mobileNav, {
       var jqueryEvent = $(e.target);
       if(jqueryEvent.is('li')) {
         var link = jqueryEvent.find('a')[0];
+        
         link.click();
+        
       }
     },
     onDragEnd:function() {
-      if (this.hitTest(mobileNavOverlap, 120)) {
+      if (Draggable.hitTest(mobileNav,mobileNavOverlap, 120)) {
         closeNav();
       } else {
         openNav();
@@ -161,7 +149,9 @@ liFlyawayLink.on('click', function(e) {
     var self = $(this).parent();
     var linkTrigger = $(this);
     var childMenu = self.find('ul').first();
-
+    
+    e.preventDefault();
+    
     if(!self.hasClass('active')) {
       self.addClass('active');
       linkTrigger.attr('aria-expanded','true');
@@ -182,6 +172,7 @@ liFlyawayLink.on('click', function(e) {
       liFlyaway.removeClass('active');
       linkTrigger.attr('aria-expanded','false');
     }
+    
   });
   
 });
