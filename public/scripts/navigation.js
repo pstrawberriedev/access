@@ -144,7 +144,7 @@ Draggable.create(mobileNav, {
       }
     },
     onDragEnd:function() {
-      if (this.hitTest(mobileNav,mobileNavOverlap, 100)) {
+      if (this.hitTest(mobileNavOverlap, 100)) {
         closeNav();
       } else {
         openNav();
@@ -162,8 +162,6 @@ liFlyawayLink.on('click', function(e) {
     var linkTrigger = $(this);
     var childMenu = self.find('ul').first();
 
-    e.preventDefault();
-    
     if(!self.hasClass('active')) {
       self.addClass('active');
       linkTrigger.attr('aria-expanded','true');
