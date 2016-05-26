@@ -162,6 +162,8 @@ liFlyawayLink.on('click', function(e) {
     var linkTrigger = $(this);
     var childMenu = self.find('ul').first();
 
+    e.preventDefault();
+    
     if(!self.hasClass('active')) {
       self.addClass('active');
       linkTrigger.attr('aria-expanded','true');
@@ -170,18 +172,18 @@ liFlyawayLink.on('click', function(e) {
       linkTrigger.attr('aria-expanded','false');
     }
     
-    // Close on Document Click
-    $(document).on('click', function(event) {
+  });
+  
+  // Close on Document Click
+  $(document).on('click', function(event) {
 
-      var linkTrigger = liFlyaway.find('a');
-      var childMenu = liFlyaway.find('ul');
+    var linkTrigger = liFlyaway.find('a');
+    var childMenu = liFlyaway.find('ul');
 
-      if(!$(event.target).closest(liFlyaway).length) {
-        liFlyaway.removeClass('active');
-        linkTrigger.attr('aria-expanded','false');
-      }
-    });
-    
+    if(!$(event.target).closest(liFlyaway).length) {
+      liFlyaway.removeClass('active');
+      linkTrigger.attr('aria-expanded','false');
+    }
   });
   
 });
