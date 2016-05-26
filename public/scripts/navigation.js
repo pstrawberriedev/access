@@ -144,7 +144,7 @@ Draggable.create(mobileNav, {
       }
     },
     onDragEnd:function() {
-      if (this.hitTest(mobileNavOverlap, 100)) {
+      if (this.hitTest(mobileNavOverlap, 120)) {
         closeNav();
       } else {
         openNav();
