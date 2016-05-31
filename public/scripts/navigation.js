@@ -53,11 +53,9 @@ $(window).on('scroll', function() {
 function closeNav() {
   
   TweenLite.to(mobileNav, .25, { x: "-270px", autoAlpha:0, ease: Power1.easeOut })
-  TweenLite.to(hamburger, .3, { color:"#424242", ease: Power1.easeOut })
   hamburger.removeClass('active');
   hamburger.attr("aria-expanded","false");
   mobileNav.attr("aria-hidden","true");
-  mobileNav.removeClass('triggered');
   
 }
 

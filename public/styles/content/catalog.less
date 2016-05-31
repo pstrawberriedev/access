@@ -75,7 +75,7 @@
 // Catalog Product Display
 // - supports filtering: see HTML comments
 #catalog-products {
-
+  
   
   // <a class="catalog-single-product">
   // - wrapping products in <a> for accessibility and ease-of-use
@@ -92,6 +92,7 @@
     figure {
       margin:0!important;
       padding:0!important;
+      position:relative;
     }
     
     // images should all be the same dimensions
@@ -111,22 +112,16 @@
       width:100%;
       
         &.price {
-          float:left;
-          width:auto;
           color:green;
-        }
-      
-        &.stock {
-          float:right;
+          display:inline-block;
           width:auto;
-          text-align:right;
-          color:@color-dark;
         }
       
     }
     
     figure {
       border-bottom:2px solid #f6f6f6;
+      //display:table;
     }
     
     // If using <figcaption> to display additional information

@@ -63,14 +63,14 @@
         -->
         <div class="filter-active">
           <h5>Applied Filters:</h5>
-          <a href="#" data-filter-remove="all">
+          <a href="#" data-filter-remove="none">
             <span class="sr-only">No Catalog Filters Selected</span>
             <span aria-hidden="true">All Products</span>
           </a>
           <!--
-          <a href="#" data-filter-remove="all">
+          <a href="#" data-filter-remove="pets">
             <span class="sr-only">Remove filter </span>
-            All Products
+            Pets
             <span class="remove" aria-hidden="true">
               <i aria-hidden="true" class="default">x</i>
               <i aria-hidden="true" class="hovered">Remove</i>
@@ -101,20 +101,16 @@
           -->
           {{#products}}
             <div class="col-sm-4 col-md-3">
-              <a class="catalog-single-product" data-category="{{category}}" href="#pets" >
+              <a class="catalog-single-product" data-category="{{category}}" href="#pets">
                 <span class="sr-only">Selected product</span>
                 <p>{{name}}</p>
                 <figure>
                   <img src="{{image}}" alt="{{short}}" />
-                    <p class="price">
-                      <span class="sr-only">Price </span>
-                      <span aria-hidden="true">$</span>{{price}}
-                      <span class="sr-only"> Dollars</span>
-                    </p>
-                    <p class="stock">
-                      <span class="sr-only">In stock </span>{{stock}} 
-                      <span aria-hidden="true">left</span>
-                    </p>
+                  <p class="price">
+                    <span class="sr-only">Price </span>
+                    <span aria-hidden="true">$</span>{{price}}
+                    <span class="sr-only"> Dollars</span>
+                  </p>
                 </figure>
               </a>
             </div>
