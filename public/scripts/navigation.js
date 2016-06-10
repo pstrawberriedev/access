@@ -193,12 +193,12 @@ liMobileSubmenu.each(function() {
   
   link.on('click', function() {
     if(!self.hasClass('active')) {
-      TweenLite.to(menu, 0.2, { x:0, ease: Power1.easeInOut,onComplete:addClass });
+      TweenLite.to(menu, 0.25, { x:0, ease: Power1.easeInOut,onComplete:addClass });
       link.attr('aria-expanded', 'true');
     }
   });
   backLink.on('click', function() {
-    TweenLite.to(menu, 0.2, { x:270, ease: Power1.easeInOut,onComplete:removeClass });
+    TweenLite.to(menu, 0.25, { x:270, ease: Power1.easeInOut,onComplete:removeClass });
     link.attr('aria-expanded', 'false');
   });
   
