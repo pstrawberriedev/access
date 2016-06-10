@@ -146,6 +146,7 @@ li.flyaway {
   z-index:3;
   background:rgba(255,255,255,.99);
   .shadow-2;
+  overflow-x:hidden;
     li {
       display:block;
       position:relative;
@@ -177,30 +178,30 @@ li.flyaway {
       top:0;
     }
   
-    // LI Flyaways in Mobile Nav
-    li.flyaway {
+    // Submenus in Mobile Nav
+    li[data-opens] {
       
-      a {
-        font-size: .8em;
-        padding-left:1.5rem;
-      }
-      >a {
-        font-size:1em;
-        padding-left:1rem;
-      }
-      >a:after {
+      [aria-expanded]:after {
         top:.7rem;
-      }
-      
-      ul {
-        background:transparent;
-        position:relative;
-        top:auto;
-        width:auto;
-        .shadow-off;
+        content:"\203A";
+        font-weight:bold;
+        position:absolute;
+        right:.65rem;
       }
       
     }
+    ul[data-submenu] {
+        background:#fff;
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        width:270px;
+        .transform(translate(270px,0));
+        overflow:hidden;
+        .shadow-off;
+        z-index:2001;
+      }
   
   
 }

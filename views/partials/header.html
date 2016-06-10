@@ -24,12 +24,6 @@
     
     <!-- Navigation -->
     <nav role="navigation" id="global">
-       
-      <!-- Skip to Content link -->
-      <a href="#main" class="access-skip-nav">
-        <span class="typcn typcn-arrow-forward" aria-hidden="true">
-        </span><span class="sr-only">Skip to Main Content</span>
-      </a>
       
       <!-- Main/Desktop Nav -->
       <ul id="main-nav" aria-hidden="false">
@@ -66,20 +60,31 @@
             <li>
               <a href="/">Overview</a>
             </li>
-            <li class="flyaway" aria-haspopup="true" role="menu">
+            <li aria-haspopup="true" role="menu" data-opens="ecom">
               <a href="#" aria-expanded="false">eCommerce</a>
-              <ul>
-                <li>
-                  <a href="/catalog">Product Catalog</a>
-                </li>
-                <li>
-                  <a href="#">Single Product</a>
-                </li>
-              </ul>
             </li>
+            <ul data-submenu="ecom">
+              <li class="back">
+                <a href="#">
+                  &lsaquo; Back <span class="sr-only">to previous menu</span>
+                </a>
+              </li>
+              <li>
+                <a href="/catalog">Product Catalog</a>
+              </li>
+              <li>
+                <a href="#">Single Product</a>
+              </li>
+            </ul>
           </ul>
         </li>
       </ul>
+      
+      <!-- Skip to Content link -->
+      <a href="#main" class="access-skip-nav">
+        <span class="typcn typcn-arrow-forward" aria-hidden="true">
+        </span><span class="sr-only">Skip to Main Content</span>
+      </a>
       
       <!-- Logo -->
       <a class="logo" href="/"><span class="typcn typcn-lock-open" aria-hidden="true"></span> Access</a>

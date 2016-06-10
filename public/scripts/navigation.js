@@ -16,6 +16,9 @@ var mobileNavOverlap = $('#mobile-nav-overlap');
 var liFlyaway = $('li.flyaway');
 var liFlyawayLink = $('li.flyaway>a');
 
+var liMobileSubmenu = $('#mobile-menu-wrap li[data-opens]');
+var mobileSubmenus = $('[data-submenu]')
+
 // Resize Function
 $(window).resize(function() {
   
@@ -52,11 +55,15 @@ $(window).on('scroll', function() {
 // Close Mobile Nav
 function closeNav() {
   
+  //default
   TweenLite.to(mobileNav, .25, { x: "-270px", autoAlpha:0, ease: Power1.easeOut })
   hamburger.removeClass('active');
   hamburger.attr("aria-expanded","false");
   mobileNav.attr("aria-hidden","true");
-  
+  //close submenus
+  TweenLite.to(mobileSubmenus, .2, { x: "270px", ease: Power1.easeOut });
+  liMobileSubmenu.removeClass('active');
+  liMobileSubmenu.find('a').attr('aria-expanded', 'false');
 }
 
 // Open Mobile Nav
@@ -148,7 +155,7 @@ Draggable.create(mobileNav, {
 });
 
 
-// LI Flyaways
+// LI Flyaways (Desktop)
 liFlyawayLink.each(function() {
   
   var self = $(this).parent();
@@ -173,6 +180,36 @@ liFlyawayLink.each(function() {
     
   });
   
+});
+
+// Mobile Submenus
+liMobileSubmenu.each(function() {
+
+  var self = $(this);
+  var menuLink = self.attr('data-opens');
+  var link = $(this).find('[aria-expanded]').first();
+  var menu = $('[data-submenu="' + menuLink + '"]');
+  var backLink = menu.find('li.back a');
+  
+  link.on('click', function() {
+    if(!self.hasClass('active')) {
+      TweenLite.to(menu, 0.2, { x:0, ease: Power1.easeInOut,onComplete:addClass });
+      link.attr('aria-expanded', 'true');
+    }
+  });
+  backLink.on('click', function() {
+    TweenLite.to(menu, 0.2, { x:270, ease: Power1.easeInOut,onComplete:removeClass });
+    link.attr('aria-expanded', 'false');
+  });
+  
+  function addClass() {
+    self.addClass('active');
+    menu.find('.back a').focus();
+  };
+  function removeClass() {
+    self.removeClass('active');
+    link.focus();
+  };
 });
 
 // Close on Document Click
